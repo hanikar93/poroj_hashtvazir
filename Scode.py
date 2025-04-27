@@ -25,3 +25,11 @@ def fitness(individual):
 def select_parents(population):
     weights = [1 / (1 + fitness(ind)) for ind in population]
     return random.choices(population, weights=weights, k=2)
+
+
+# تابع برای ترکیب والدین
+def crossover(parent1, parent2):
+    point = random.randint(1, N-1)
+    child1 = parent1[:point] + [gene for gene in parent2 if gene not in parent1[:point]]
+    child2 = parent2[:point] + [gene for gene in parent1 if gene not in parent2[:point]]
+    return child1, child2

@@ -33,3 +33,8 @@ def crossover(parent1, parent2):
     child1 = parent1[:point] + [gene for gene in parent2 if gene not in parent1[:point]]
     child2 = parent2[:point] + [gene for gene in parent1 if gene not in parent2[:point]]
     return child1, child2
+
+# تابع برای جهش
+def mutate(individual):
+    idx1, idx2 = random.sample(range(N), 2)
+    individual[idx1], individual[idx2] = individual[idx2], individual[idx1]

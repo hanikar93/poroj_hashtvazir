@@ -6,3 +6,4 @@ haney karbalai:
 reyhane davoudi:
 I added a function to crossover
 I added a function to mutate(individual)
+I added a function to genetic_algorithm

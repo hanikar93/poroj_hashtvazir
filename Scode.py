@@ -12,3 +12,11 @@ def create_population(size):
         random.shuffle(individual)
         population.append(individual)
     return population
+# تابع برای محاسبه هزینه (تعداد برخوردها)
+def fitness(individual):
+    clashes = 0
+    for i in range(N):
+        for j in range(i + 1, N):
+            if individual[i] == individual[j] or abs(individual[i] - individual[j]) == abs(i - j):
+                clashes += 1
+    return clashes
